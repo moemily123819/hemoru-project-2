@@ -177,7 +177,7 @@ function getData_secondTicker(symbol) {
     var o_prices = parseFloat(openPrices[i]);  
 
     var diff = c_prices - o_prices;  
-    var diff_perc = (diff*100/o_prices).toFixed(2);
+    var diff_perc = +(diff*100/o_prices).toFixed(2);
 
     mon_diff.push(diff_perc);
       
@@ -251,7 +251,7 @@ function buildTable(dates, openPrices, highPrices, lowPrices, closingPrices, vol
     var o_prices = parseFloat(openPrices[i]);  
 
     var diff = c_prices - o_prices;  
-    var diff_perc = (diff * 100 / o_prices).toFixed(2);
+    var diff_perc = +(diff * 100 / o_prices).toFixed(2);
     
   //  console.log('diff + i', i, diff);
     mon_diff.push(diff_perc);
