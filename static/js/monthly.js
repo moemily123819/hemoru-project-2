@@ -213,7 +213,7 @@ function buildCharts_forTwo(dates, monthly_diff_1, monthly_diff_2, secondTicker)
         enabled: false
     },
     series: [ { name : ticker,
-                data : r_monthly_diff_1 },
+                data : monthly_diff_1 },
               { name  : secondTicker,
                 data : r_monthly_diff_2 }
             
