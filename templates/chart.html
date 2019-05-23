@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Additional Comparison</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://code.highcharts.com/stock/highstock.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+	
+	  
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">HeMoRu LLC<span>Stock Application</span></a></div>
+			</header>
+
+		<!-- Nav 
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Company Profile</a></li>
+					<li><a href="elements.html">Charts</a></li>
+				</ul>
+			</nav> -->
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Daily Stock Comparison against S&P index</h2>
+								<div class="col-md-2">
+									<p id="report-date">>2019</p>
+								</div>     
+							</header>
+							<div id="container" style="height: 400px; min-width: 310px"></div>
+
+							<button id="button" class="autocompare">Add series</button>
+							
+
+
+							<div class="row">
+									<div class='col-md-5' style="min-width: 200px; height: 25px; margin: 0 auto"></div>
+									<div class='col-md-5'>
+										<a href="index" class="button" id="index" style="width:80px; font-size:10px;">Home</a>
+										<a href="comp_profiles" class="button" id="comp_profiles" style="width:120px; font-size:10px;">Company Profiles</a>
+										<a href="monthly" class="button" id="monthly" style="width:100px; font-size:10px;">Monthly Charts</a>
+									</div>
+								</div>
+				
+				
+		<!--					<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Browse The Market...</h3>
+									<p>Step 1 Use the drop down to select to appropriate ticker symbol that represents the company you are interested in learning more about.</p>
+									<p>Step 2 Once you have selected the company, familiarize yourself with some of the key data points we have selected to give a better insight.</p>
+									<div>
+									<h3>
+										
+								<div class="col col1 first">
+									<div class="image round fit">
+<!--										<a href="generic" class="link"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>-->
+										<a><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>
+									</div>
+								</div>
+							</div>
+							<p>Now that you have a better understanding of the players in the market, lets take a deeper dive into the trends.</p>
+							
+						</div>
+					</div> -->
+					</section>
+
+
+				<!-- Section -->
+		<!--		<section class="wrapper style1">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Lets Get Visual...</h2>
+								<p>Next, we will view and compare the historical trends of company opening and closing stock prices on a monthly basis. The graphs and visuals displayed here will give the highs and lows of stock prices for a selected company. There are many elements that can cause a company’s stock evaluation to trend up or down. Things like supply and demand, interest rates, dividends, political climate and economy strength are all external factors which can affect your portfolio’s performance.</p>
+							</header>
+							
+									<p>Contrast & Compare </p>
+									<a href="monthly" class="button" id='monthly'>Learn More</a>
+								</div>
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="{{ url_for('static', filename='images/Comparison-chart2.PNG') }}" alt="" />
+									</div>
+								
+								</div>
+								</div>
+							</div>
+						</div>
+					</section> -->
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/chart.js') }}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,34 @@
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+
+
+#index, #charts, #monthly, #comp_profiles {
+    background:fff;
+    line-height: 18px;
+    color: blue;
+    height: 25px;
+    border-radius: 25px;
+    border: 2px solid #CEF6EC;
+
+}
+
+.well {
+    background:fff;
+    line-height: 18px;
+    color: blue;
+    height: 25px;
+    border-radius: 25px;
+    border: 2px solid #CEF6EC;
+
+}

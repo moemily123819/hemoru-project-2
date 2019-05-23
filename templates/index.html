@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Hemoru LLC</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">HeMoRu LLC <span>Stock Application</span></a></div>
+<!--				<a href="#menu">Menu</a>-->
+			</header>
+
+		<!-- Nav 
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Company Profile</a></li>
+					<li><a href="elements.html">Charts</a></li>
+				</ul>
+			</nav>-->
+
+
+		<!-- Banner -->
+      <section id="banner">
+        <div class="inner">
+          <header>
+            <h1>A Simplier Way of Investing</h1>
+            <p>HeMoRu is an online platform that makes investing easy for the everyday individual.</p>
+          </header>
+          <a href="#main" class="button big scrolly">Learn More</a>
+        </div>
+      </section>
+
+    
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section1 -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+									<div class="col col1">
+										<div class="image round fit">
+<!--											<a href="generic" class="link"><img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="" /></a>-->
+												<a><img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="" /></a>
+										</div>
+									</div>
+									<div class="col col2">
+										<h3>What To Expect?</h3>
+										<p>Investing in stocks is a tool for building wealth, but it is not only for the wealthy. Anyone can get started on an investing program, and various vehicles make it easy to begin with small amounts and add to a portfolio periodically. In fact, what differentiates investing from gambling is that it takes time—it is not a get-rich-quick scheme.</p>
+										<p>This platform will help you to understand what investing is and will also cover some of the building blocks of the investing world. The goal is to give some insight into markets and techniques of helping you think about which investing strategies and vehicles are right for you.</p>
+										<p>Whether planning for retirement, saving for a rainy day, or just creating an additional revenue stream, investing can be made easy for just about anyone; walking through step by step to building the right portfolio.</p>
+										<a href="#section" class="button">Learn More</a>
+									</div>
+								</div>
+						</div>
+					</section>
+        
+        <div id="section">
+				<!-- Section2 -->
+					<section class="wrapper style2">
+						<div class="inner">
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Getting Started!</h3>
+									<p>We will start with the Company Profile. Understanding and familiarizing yourself with potential companies is vital. A company’s financial solvency, future business strategies, and market KPI’s (key performance indicators) are great signs of potential future performance. This acts as an internal indicator for stock values of a company.</p>
+                  <a href="comp_profiles" class="button">Learn More</a>
+                </div>  
+								<div class="col col1 first">
+									<div class="image round fit">
+										<a href="comp_profiles" class="link"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>
+									</div>
+								</div>
+							</div>
+            </div>
+					</section>
+
+  
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
+</html>

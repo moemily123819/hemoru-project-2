@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Company Profile</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index">HeMoRu LLC<span>Stock Application</span></a></div>
+	<!--			<a href="#menu">Menu</a>-->
+			</header>
+
+		<!-- Nav 
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index">Home</a></li>
+					<li><a href="generic">Monthly Charts</a></li>
+					<li><a href="elements">Comparison Charts</a></li>
+				</ul>
+			</nav>-->
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1>HeMoRu LLC</h1>
+								<p>Browse through our selection of companies for more information.</p>
+							</header>
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Browse The Market...</h3>
+									<p>Step 1 Use the drop down to select to appropriate ticker symbol that represents the company you are interested in learning more about.</p>
+									<p>Step 2 Once you have selected the company, familiarize yourself with some of the key data points we have selected to give a better insight.</p>
+									<div>
+									<h3>
+										Financial Report            
+										<p id="report-date" style="float: right;">2019</p>
+									  </h3>
+									  <h5><strong>SELECT Stock Symbol:</strong></h5>
+									<select id="selDataset" onchange="optionChanged(this.value)"></select>
+									
+							        <h5 id="company-name"></h5>
+					    		    <h5 id = 'sector-desc'></h5>
+    								<h5 id = 'company-desc'></h5>
+     								<h5 id = 'company-website'></h5>
+     								<h5 id = 'company-addr'></h5>
+									<h5 id = 'phone-nbr'></h5>
+									<h5 id = 'market-val'></h5>
+									<h5 id = 'div-yield'></h5>
+									<br>
+									<br>
+
+									<div class="row">
+									  <h5 class = "col-md-2"></h5>
+									  <h5 class = "col-md-4" id = 'ratings-1' style="min-width: 280px;"></h5>
+									   <h5 class = "col-md-4" id = 'ratings-2'></h5>
+									   <h5 class = "col-md-2"></h5>
+									</div>
+								
+								</div>
+							</div>
+<!--								<div class="col col1 first">
+									<div class="image round fit">
+										<a href="generic" class="link"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>
+									</div>
+								</div> -->
+
+								<!--Emily ticker info-->
+								
+							</div>
+							<p>Now that you have a better understanding of the players in the market, lets take a deeper dive into the trends.</p>
+							<a href="monthly" class="button" id="monthly">Learn More</a>
+
+						</div>
+					</section>
+
+
+
+				<!-- Section -->
+<!--				<section class="wrapper style1">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Lets Get Visual...</h2>
+								<p>Next, we will view and compare the historical trends of company opening and closing stock prices on a monthly basis. The graphs and visuals displayed here will give the highs and lows of stock prices for a selected company. There are many elements that can cause a company’s stock evaluation to trend up or down. Things like supply and demand, interest rates, dividends, political climate and economy strength are all external factors which can affect your portfolio’s performance.</p>
+							</header>
+							<div>
+									<p></p>
+									
+								</div>
+								<div class="col align-center" align= "center">
+									<div class="image round fit" style="width:500px;height:300px" align= "center">
+										<img src="{{ url_for('static', filename='images/Comparison-chart2.PNG') }}" alt="" style="width:500px;height:300px;">
+									</div>
+									<a href="elements" class="button" id="monthly">Learn More</a>
+								</div>
+								</div>
+							</div>
+						</div>
+					</section> -->
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script> -->
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+			<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		  
+			<script src="{{ url_for('static', filename='js/comp_profiles.js') }}"></script>
+
+	</body>
+</html>
