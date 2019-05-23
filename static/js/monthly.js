@@ -136,7 +136,7 @@ function buildCharts(dates, monthly_diff) {
         type: 'column'
     },
     title: {
-        text: `${ticker} Monthly Variance Report`
+        text: `${ticker} Monthly Variance Report (%)`
     },
     xAxis: {
         categories: r_dates
@@ -193,7 +193,7 @@ function buildCharts_forTwo(dates, monthly_diff_1, monthly_diff_2, secondTicker)
 
     
         
-    var r_monthly_diff_1 =monthly_diff_1.reverse();
+//    var r_monthly_diff_1 =monthly_diff_1.reverse();
     var r_monthly_diff_2 =monthly_diff_2.reverse();
     var three_years = dates.slice(0, 36);
     var r_dates = three_years.reverse();    
@@ -204,7 +204,7 @@ function buildCharts_forTwo(dates, monthly_diff_1, monthly_diff_2, secondTicker)
         type: 'column'
     },
     title: {
-        text: `${ticker} Monthly Variance Report`
+        text: `${ticker} Monthly Variance Report (%)`
     },
     xAxis: {
         categories: r_dates
