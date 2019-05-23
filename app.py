@@ -12,12 +12,12 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
-MONGO_URL = os.environ.get('MONGO_URL')
-if not MONGO_URL:
-    MONGO_URL = "mongodb://localhost:27017/project_2_app";
+MONGO_URI = os.environ.get('MONGO_URI')
+if not MONGO_URI:
+    MONGO_URI = "mongodb://localhost:27017/project_2_app";
 
 
-app.config['MONGO_URI'] = MONGO_URL
+app.config['MONGO_URI'] = MONGO_URI
 mongo = PyMongo(app)
 
 
