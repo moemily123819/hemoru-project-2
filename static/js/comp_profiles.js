@@ -1,6 +1,3 @@
-const api_key = "QIT4B3LLKYRYT48J";
-const q_api_key ='LvDnxyb5x2sY2-YHy76Y';
-
 var date= localStorage.getItem("today_date");
 
 d3.select("#report-date").text(date);

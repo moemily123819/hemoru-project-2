@@ -18,6 +18,7 @@
 		<script src="https://code.highcharts.com/stock/highstock.js"></script>
 		<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 		<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+		<script src="{{ url_for('static', filename='js/dark-unica.js') }}"></script>
 	
 	  
 	</head>
@@ -44,23 +45,24 @@
 					<section class="wrapper">
 						<div class="inner">
 							<header class="align-center">
-								<h2>Daily Stock Comparison against S&P index</h2>
-								<div class="col-md-2">
-									<p id="report-date">>2019</p>
-								</div>     
+								<h3>Daily Stock Comparison against S&P index</h3>
+	<!--							<div class="col-md-2">
+									<h6 id="report-date"></h6>
+								</div>   -->  
 							</header>
 							<div id="container" style="height: 400px; min-width: 310px"></div>
 
-							<button id="button" class="autocompare">Add series</button>
+							<button id="button" class="autocompare">Add Stock Chart</button>
 							
 
 
 							<div class="row">
-									<div class='col-md-5' style="min-width: 200px; height: 25px; margin: 0 auto"></div>
-									<div class='col-md-5'>
+									<div class='col-md-4' style="min-width: 150px; height: 25px; margin: 0 auto"></div>
+									<div class='col-md-6'>
 										<a href="index" class="button" id="index" style="width:80px; font-size:10px;">Home</a>
 										<a href="comp_profiles" class="button" id="comp_profiles" style="width:120px; font-size:10px;">Company Profiles</a>
 										<a href="monthly" class="button" id="monthly" style="width:100px; font-size:10px;">Monthly Charts</a>
+										<a href="subscribe" class="button" id="subscribe" style="width:100px; font-size:10px;">Supplemental</a>
 									</div>
 								</div>
 				
@@ -75,12 +77,12 @@
 										
 								<div class="col col1 first">
 									<div class="image round fit">
-<!--										<a href="generic" class="link"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>-->
-										<a><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>
+<!--										<a href="generic" class="link"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>
+										<a><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>-->
 									</div>
 								</div>
 							</div>
-							<p>Now that you have a better understanding of the players in the market, lets take a deeper dive into the trends.</p>
+							<p> Now that you have a better understanding of the players in the market, lets take a deeper dive into the trends. The chart above shows the rate of return of S&P 500 as compared to the company you have selected.</p>
 							
 						</div>
 					</div> -->
@@ -120,14 +122,14 @@
 						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
 					</ul>
-					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
 			<script type="text/javascript" src="{{ url_for('static', filename='js/chart.js') }}"></script>
-
+			
 	</body>
 </html>

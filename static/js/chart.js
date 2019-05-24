@@ -1,6 +1,3 @@
-const api_key = "QIT4B3LLKYRYT48J";
-const q_api_key ='LvDnxyb5x2sY2-YHy76Y';
-
 var ticker= localStorage.getItem("ticker");
 var company_name= localStorage.getItem("company_name");
 var date= localStorage.getItem("today_date");
@@ -33,7 +30,7 @@ var closingPrices = [];
 
 // Variable for url to call API
 
-var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${spy}&apikey=${api_key}`;
+var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${spy}&outputsize=full&apikey=${api_key}`;
 
 console.log('url : ', url);  
 // Function that activates on load of the page (jQuery syntax)
@@ -52,16 +49,19 @@ $(document).ready(function() {
          dates.push(value);
          dateLabels.push(key);
       });
-
+      // Slice dates and dateLabels array for 1 year of data
+      // Stock market open for 252 days in a year
+      dates = dates.slice(0,252);
+      dateLabels = dateLabels.slice(0,252);
       // Loop through dates array
       for (i = 0; i < dates.length; i++) {
          
          // Create a closingPrice variable for each closing price
-         var closingPrice = dates[i]["4. close"];
+         var closingPrice = parseFloat(dates[i]["4. close"]);
          
          // Push to closingPrices array
          // API stores prices as strings, so parseFloat must be used to convert them to floats
-         closingPrices.push(parseFloat(closingPrice));
+         closingPrices.push(closingPrice);
       }
 
       // Call getNewSeries function, which includes initial drawing of chart
@@ -78,7 +78,7 @@ function getNewSeries(ticker) {
    var newClosingPrices = [];
 
    // Set url for API call with the new ticker
-   var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=${api_key}`;
+   var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&outputsize=full&apikey=${api_key}`;
 
 console.log('2nd url : ', url);  
 
@@ -95,14 +95,18 @@ console.log('2nd url : ', url);
          newDates.push(value);
       });  
       
+      // Slice newDates array for 1 year of data
+      // Stock market open for 252 days in a year
+      newDates = newDates.slice(0,252);
+      
       // Loop through newDates array
       for (i = 0; i < newDates.length; i++) {
          
          // Set newClosingPrice variable on each loop
-         var newClosingPrice = newDates[i]["4. close"];
+         var newClosingPrice = parseFloat(newDates[i]["4. close"]);
          
          // parseFloat each new price and push to newClosingPrices
-         newClosingPrices.push(parseFloat(newClosingPrice));
+         newClosingPrices.push(newClosingPrice);
       }
 
       // API shows most recent price first, so array must be reversed in order to plot
@@ -113,14 +117,17 @@ console.log('2nd url : ', url);
 
          // Set title using dateLabels array to show range
          title: {
-            text: `Daily Closing Prices ${dateLabels[dateLabels.length - 1]} to ${dateLabels[0]}`
+            text:  `1-Year Rate of Return vs. S&P 500`
          },
    
          // Set xAxis labels to dateLabels array and reverse to match price arrays
          xAxis: {
             
             // Disable labels (Data is daily, so axis would be cluttered. Date will show in tooltip)
-            labels: {enabled: false
+            labels: {enabled: true,
+                      style: {
+                  color: "#313131"
+               }
             },
             categories: dateLabels.reverse()
          },
@@ -128,18 +135,42 @@ console.log('2nd url : ', url);
          // Set yAxis title and styling
          yAxis: {
             title: {
-               text: 'Closing Price ($)'
+                text: 'Rate of Return (%)'
             },
+            // Use function to format y axis labels as +/- value with % symbol 
+            labels: {
+               formatter: function () {
+                   return (this.value > 0 ? ' + ' : '') + this.value + '%';
+               }
+           }, 
+             // Set width and color of gridlines
             plotLines: [{
                value: 0,
-               width: 1,
-               color: '#808080'
+               width: 2,
+               color: '#C0C0C0'
             }]
          }, 
-   
-         // Add $ suffix to tooltip
+    // Adds percent change from initial point into tooltip
+           plotOptions: {
+            series: {
+                compare: 'percent',
+                showInNavigator: true
+            }
+        }, 
+          // Create tooltip
          tooltip: {
-            valueSuffix: '$'
+   
+        // Format html in tooltip to show ticker (in same color as line), closing price, and % change from the initial point
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+            
+            // Round percentages to 2 decimal places
+            valueDecimals: 2,
+            
+            // Add $ sign to closing prices
+            valuePrefix: '$',
+            
+            // Show price & percentage on line, show date on bottom of plot
+            split: true
          },
    
          // Create Legend
@@ -232,4 +263,20 @@ index.on("click", function() {
       location.replace("../")
    
 })
+
+
+
+var subscribe = d3.select("#subscribe");
+
+subscribe.on("click", function() {
+
+  // Prevent the page from refreshing
+      d3.event.preventDefault();
+ 
+      localStorage.clear();
+      console.log('subscribe -click');
+      location.replace("../subscribe")
+   
+})
+
 

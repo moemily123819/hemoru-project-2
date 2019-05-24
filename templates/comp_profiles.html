@@ -46,7 +46,7 @@
 									<h3>Browse The Market...</h3>
 									<p>Step 1 Use the drop down to select to appropriate ticker symbol that represents the company you are interested in learning more about.</p>
 									<p>Step 2 Once you have selected the company, familiarize yourself with some of the key data points we have selected to give a better insight.</p>
-									<div>
+									<div class="col-md-10" style="min-width:650px; background-color: #CEF6EC;">
 									<h3>
 										Financial Report            
 										<p id="report-date" style="float: right;">2019</p>
@@ -124,7 +124,6 @@
 						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
 					</ul>
-					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
 				</div>
 			</footer>
 
@@ -140,7 +139,7 @@
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
 			<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-		  
+			<script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/comp_profiles.js') }}"></script>
 
 	</body>

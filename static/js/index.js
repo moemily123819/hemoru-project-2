@@ -1,5 +1,6 @@
 var today = new Date();
 var date = "";
+localStorage.clear();
 
 function init() {
     

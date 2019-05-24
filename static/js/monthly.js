@@ -1,6 +1,3 @@
-const api_key = "QIT4B3LLKYRYT48J";
-const q_api_key ='LvDnxyb5x2sY2-YHy76Y';
-
 var ticker= localStorage.getItem("ticker");
 var company_name= localStorage.getItem("company_name");
 var date= localStorage.getItem("today_date");
@@ -141,6 +138,23 @@ function buildCharts(dates, monthly_diff) {
     xAxis: {
         categories: r_dates
     },
+     yAxis:[{
+            title: {
+                text: 'Variance in %'
+            },
+            // Use function to format y axis labels as +/- value with % symbol 
+            labels: {
+               formatter: function () {
+                   return (this.value > 0 ? ' + ' : '') + this.value + '%';
+               }
+           }, 
+     }],
+     tooltip: {
+   
+        // Format html in tooltip to show %
+         pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}%</b>'
+     },
+        
     credits: {
         enabled: false
     },
@@ -209,6 +223,24 @@ function buildCharts_forTwo(dates, monthly_diff_1, monthly_diff_2, secondTicker)
     xAxis: {
         categories: r_dates
     },
+     yAxis:[{
+            title: {
+                text: 'Variance in %'
+            },
+            // Use function to format y axis labels as +/- value with % symbol 
+            labels: {
+               formatter: function () {
+                   return (this.value > 0 ? ' + ' : '') + this.value + '%';
+               }
+           }, 
+     }],
+     tooltip: {
+   
+        // Format html in tooltip to show %
+         pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}%</b>'
+     },
+        
+ 
     credits: {
         enabled: false
     },

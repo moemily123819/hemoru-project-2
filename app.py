@@ -64,6 +64,12 @@ def chart():
     # Return template and data
     return render_template("chart.html")
 
+@app.route("/subscribe")
+def subscribe():
+
+    # Return template and data
+    return render_template("subscribe.html")
+
 
 #@app.route("/return")
 #def return():

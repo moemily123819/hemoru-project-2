@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>More Info</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index">HeMoRu LLC<span>Stock Application</span></a></div>
+		<!--		<a href="#menu">Menu</a> -->
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Company Profile</a></li>
+					<li><a href="elements.html">Data Visuals</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+				<section class="wrapper style1">
+					<div class="inner">
+
+						<header class="align-center">
+							<h1>References and Educational Material</h1>
+							<p>See below for supplimental materials.</p>
+						</header>
+
+
+
+
+						
+						<!-- Content -->
+							<h3 id="content">Office of Investor Education and Advocacy</h3>
+							<p>The Office of Investor Education and Advocacy has provided this information as a service to investors. It is neither a legal interpretation nor a statement of SEC policy. If you have questions concerning the meaning or application of a particular law or rule, please consult with an attorney who specializes in securities law.
+                            </p>
+                            <p> <a href="https://www.investor.gov/" target="_blank"> <b> Investor website</b> </a> </p>
+							<div class="row">
+								<div>
+									<h3>Investor Insight</h3>
+									<p>Read an article on a case study of the parallel affects of Apple device launches and its affect on Apple Stock prices. Our research team is dedicated to providing you with comprehensive market knowledge.</p>
+                                </p>
+                                <p> <a href="{{ url_for('static', filename='images/Apple_Stock_Whats_the_scoop.pdf') }}" target="_blank"> <b>Apple Stock-Whats the scoop ? </b> </a> </p>
+                                <div class="row">
+                                </div>
+						
+							</div>
+							<div class="row">
+								<div class='col-md-5'style="width: 300px;"></div>
+								<div class='col-md-5'>
+									<a href="/" class="button" id="index" style="width:80px; font-size:10px;">Home</a>
+									<a href="chart" class="button" id="chart" style="width:100px; font-size:10px;">Daily Chart</a>								</div>
+							</div>
+							<br>
+							<br>
+			
+						<section>	
+
+						<hr class="major" />
+
+						
+										
+									<!-- Table -->
+										<h3>Subscription</h3>
+
+										<h4>Pricing</h4>
+										<div class="table-wrapper">
+											<table>
+												<thead>
+													<tr>
+														<th>Subscription Type</th>
+														<th>Description</th>
+														<th>Price</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Monthly</td>
+														<td>Month-to-month service no contract.</td>
+														<td>$29.99</td>
+													</tr>
+													<tr>
+														<td>Yearly</td>
+														<td>Pre-paid contract for 12 months</td>
+														<td>$300.00</td>
+													</tr>
+												</tbody>
+												<tfoot>
+									
+												</tfoot>
+											</table>
+										</div>
+					
+
+									<!-- Form -->
+										<h3>Sign up for our Newsletter</h3>
+
+										<form method="post" action="#">
+											<div class="row uniform">
+												<div>
+													<input type="text" name="name" id="name" value="" placeholder="Name" />
+												</div>
+												<div>
+													<input type="email" name="email" id="email" value="" placeholder="Email" />
+												</div>
+												<!-- Break -->
+												<div class="12u$">
+													<div class="select-wrapper">
+														<select name="category" id="category">
+															<option value="">- Investor Type -</option>
+															<option value="1">First-TImer </option>
+															<option value="1">Casual Investor</option>
+															<option value="1">Experienced</option>
+														</select>
+													</div>
+												</div>
+												<!-- Break -->
+												
+												<!-- Break -->
+												<div class="6u 12u$(small)">
+													<input type="checkbox" id="copy" name="copy">
+													<label for="copy">Email me a copy of this message</label>
+												</div>
+												
+												<!-- Break -->
+												<div class="12u$">
+													<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+												</div>
+												<!-- Break -->
+												<div class="12u$">
+													<ul class="actions">
+														<li><input type="submit" value="Send Message" /></li>
+														<li><input type="reset" value="Reset" class="alt" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+
+										<hr />
+									</section>
+
+										
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			
+
+	</body>
+</html>
