@@ -273,7 +273,6 @@ subscribe.on("click", function() {
   // Prevent the page from refreshing
       d3.event.preventDefault();
  
-      localStorage.clear();
       console.log('subscribe -click');
       location.replace("../subscribe")
    
