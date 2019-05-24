@@ -28,16 +28,20 @@ var dates = [];
 var dateLabels = [];
 var closingPrices = [];
 
+
+var stock_dates = [];
+var stock_details = [];
+
 // Variable for url to call API
 
-var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${spy}&outputsize=full&apikey=${api_key}`;
+var spy_url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${spy}&outputsize=full&apikey=${api_key}`;
 
-console.log('url : ', url);  
+console.log('spy_url : ', spy_url);  
 // Function that activates on load of the page (jQuery syntax)
 $(document).ready(function() {
 
    // Get json data
-   d3.json(url).then(function(data) {
+   d3.json(spy_url).then(function(data) {
 
       // Separate json object and push values to metadata array
       Object.entries(data).forEach(([key, value]) => {
@@ -51,6 +55,7 @@ $(document).ready(function() {
       });
       // Slice dates and dateLabels array for 1 year of data
       // Stock market open for 252 days in a year
+      stock_dates = dateLabels.slice(0,756);
       dates = dates.slice(0,252);
       dateLabels = dateLabels.slice(0,252);
       // Loop through dates array
@@ -78,9 +83,9 @@ function getNewSeries(ticker) {
    var newClosingPrices = [];
 
    // Set url for API call with the new ticker
-   var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&outputsize=full&apikey=${api_key}`;
+   var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&outputsize=full&apikey=${api_key}`;
 
-console.log('2nd url : ', url);  
+    console.log('2nd url : ', url);  
 
    // Get json data
    d3.json(url).then(function(data) {
@@ -89,6 +94,7 @@ console.log('2nd url : ', url);
       Object.entries(data).forEach(([key, value]) => {
          newMeta.push(value);
       });
+      console.log('newMeta from getNewSeries : ', newMeta);  
 
       // Separate json object and push values to newDates array
       Object.entries(newMeta[1]).forEach(([key, value]) => {
@@ -97,6 +103,7 @@ console.log('2nd url : ', url);
       
       // Slice newDates array for 1 year of data
       // Stock market open for 252 days in a year
+      stock_details = newDates.slice(0,756);
       newDates = newDates.slice(0,252);
       
       // Loop through newDates array
@@ -206,10 +213,123 @@ console.log('2nd url : ', url);
                enabled: false
             }
          });
+             buildLineChart();
       });
    });
+
+
+
 };
 
+
+
+function buildLineChart() {
+
+    
+    var b_dates=[];
+    var b_details=[];
+    var b_open=[];
+    var b_close=[];
+    var b_high=[];
+    var b_low=[];
+    var b_vol=[];
+    var b_div=[];
+    
+      b_dates = stock_dates;
+      b_details = stock_details;
+      
+      console.log('details : ', b_dates, b_details);
+    
+      // Loop through newDates array
+      for (i = 0; i < b_dates.length; i++) {
+         
+         // Set details on each loop
+         var closingPrice = parseFloat(b_details[i]["4. close"]);
+         var openingPrice = parseFloat(b_details[i]["1. open"]);
+         var low = parseFloat(b_details[i]["3. low"]);
+         var high = parseFloat(b_details[i]["2. high"]);
+         var vol = parseFloat(b_details[i]["6. volume"]);
+         var dividend = parseFloat(b_details[i]["7. dividend amount"]);
+          
+
+          // Push to arrays
+          
+         b_close.push(closingPrice);
+         b_open.push(openingPrice);
+         b_high.push(high);
+         b_low.push(low);
+         b_vol.push(vol);
+         b_div.push(dividend);
+      }
+
+          // just retrieve the non zero dividend amount....get it to plot as the value of closing price so it appears on the line
+         
+      var z_div_close =[];
+      var z_dates =[];
+      var z_div =[];
+    
+      for (i = 0; i < b_dates.length; i++) {
+         
+         if (b_div[i] > 0) {
+             z_div_close.push(b_close[i]);
+             z_dates.push(b_dates[i]);
+             z_div.push('dividend:'+ b_div[i]);
+             
+         }
+      }
+    
+
+       console.log('z_div:', z_div, z_dates, z_div_close);
+//      z_div = b_div.filter(divid => divid > 0);
+    
+    
+   
+     var trace1 = {
+          type: "scatter",
+          mode: "markers",
+//          text:z_div,
+          x: z_dates,
+          y: z_div_close,
+          name: "dividend ",
+          text: z_div,
+          hoverinfo : 'text',
+          marker: {
+            size : 10,  
+            color: "#0000FF"
+          }
+        };
+    // Candlestick Trace
+    var trace2 = {
+      type: "candlestick",
+      x: b_dates,
+      high: b_high,
+      low: b_low,
+      open: b_open,
+      close: b_close
+    };
+
+    var plot_data = [trace1, trace2];
+
+    var layout = {
+      title: `${ticker} closing prices-past 3 years`,
+      xaxis: {
+        range: [b_dates[755], b_dates[0]],
+        type: "date"
+      },
+      yaxis: {
+        autorange: true,
+        type: "linear"
+      },
+      showlegend: false
+    };
+
+    Plotly.newPlot("plot", plot_data, layout);
+
+    
+}   
+
+
+//buildLineChart();
 
 
 
