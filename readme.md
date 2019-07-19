@@ -32,7 +32,7 @@ This app, with multiple webpages,  uses :
 - Alphavantage API - for daily stock prices and monthly stock prices,
 - javascript, 
 - flask app (using python),
-- python script to retrieve data for the flask app,
+- python script to obtain data via Quandl API or retrieve company profiles data for the flask app,
 - plot-ly,
 - highcharts,
 - heroku for deployment and mLab for the Mongo add-on.  
@@ -44,3 +44,4 @@ This app, with multiple webpages,  uses :
 This app is deployed in heroku.
 
 [https://hemoru-project-2.herokuapp.com](https://hemoru-project-2.herokuapp.com/)
+
